@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Adama Ballo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: #b74b4b;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: white;
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #b74b4b;
+            border-bottom: 3px solid #b74b4b;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            min-height: 100vh;
+            padding: 12rem 9% 8rem;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #b74b4b, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title span {
+            color: #b74b4b;
+        }
+
+        .section-subtitle {
+            font-size: 1.8rem;
+            text-align: center;
+            color: #ccc;
+            margin-bottom: 6rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(45deg, #b74b4b, #ff6b6b);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 3rem 4rem;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #b74b4b;
+            border: 4px solid #ff6b6b;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .experience-content {
+            padding: 3rem;
+            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+            position: relative;
+            border-radius: 2rem;
+            box-shadow: 0 15px 35px rgba(183, 75, 75, 0.1);
+            border: 1px solid rgba(183, 75, 75, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(183, 75, 75, 0.2);
+        }
+
+        .left .experience-content::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #2a2a2a;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #2a2a2a;
+        }
+
+        .right .experience-content::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #2a2a2a;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #2a2a2a transparent transparent;
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .experience-icon {
+            font-size: 3rem;
+            color: #b74b4b;
+            margin-right: 2rem;
+        }
+
+        .experience-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-size: 1.6rem;
+            color: #b74b4b;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            font-size: 1.4rem;
+            color: #aaa;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-description {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .experience-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-description li {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .experience-description li::before {
+            content: '▶';
+            color: #b74b4b;
+            position: absolute;
+            left: 0;
+        }
+
+        .location {
+            font-size: 1.3rem;
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 995px) {
+            header {
+                flex-direction: column;
+                padding: 1.5rem 5%;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            nav {
+                margin-top: 1.5rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 0.5rem 1.5rem;
+                font-size: 1.6rem;
+            }
+            
+            .experience-section {
+                padding: 15rem 5% 8rem;
+            }
+            
+            .section-title {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 56%;
+            }
+            
+            header {
+                padding: 1rem 3%;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            nav a {
+                margin: 0.3rem 1rem;
+                font-size: 1.4rem;
+            }
+            
+            .experience-section {
+                padding: 14rem 3% 6rem;
+            }
+            
+            .section-title {
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.6rem;
+                margin-bottom: 4rem;
+                padding: 0 1rem;
+            }
+            
+            .experience-content {
+                padding: 2.5rem;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            .experience-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
+            
+            .experience-title {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+            
+            .experience-company {
+                font-size: 1.5rem;
+            }
+            
+            .experience-date {
+                font-size: 1.3rem;
+            }
+            
+            .location {
+                font-size: 1.2rem;
+            }
+            
+            .experience-description li {
+                font-size: 1.3rem;
+                line-height: 1.5;
+            }
+        }
+
+        @media (max-width: 600px) {
+            html {
+                font-size: 52%;
+            }
+            
+            header {
+                padding: 1rem 2%;
+            }
+            
+            .logo {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            nav {
+                margin-top: 1rem;
+            }
+            
+            nav a {
+                margin: 0.2rem 0.8rem;
+                font-size: 1.3rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 7rem;
+                padding-right: 2rem;
+                margin-bottom: 3rem;
+            }
+            
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid #2a2a2a;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #2a2a2a transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+            
+            .left .experience-content::before,
+            .right .experience-content::before {
+                left: 30px;
+                border: medium solid #2a2a2a;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent #2a2a2a transparent transparent;
+            }
+            
+            .experience-section {
+                padding: 13rem 2% 5rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.4rem;
+                margin-bottom: 3rem;
+            }
+            
+            .experience-content {
+                padding: 2rem;
+            }
+            
+            .experience-title {
+                font-size: 1.8rem;
+            }
+            
+            .experience-company {
+                font-size: 1.4rem;
+            }
+            
+            .experience-date {
+                font-size: 1.2rem;
+            }
+            
+            .location {
+                font-size: 1.1rem;
+            }
+            
+            .experience-description li {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+                padding-left: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 50%;
+            }
+            
+            header {
+                padding: 0.8rem 1.5%;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            nav a {
+                margin: 0.2rem 0.5rem;
+                font-size: 1.2rem;
+            }
+            
+            .experience-section {
+                padding: 12rem 1.5% 4rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .timeline-item {
+                padding-left: 6rem;
+                padding-right: 1.5rem;
+            }
+            
+            .experience-content {
+                padding: 1.8rem;
+            }
+            
+            .experience-icon {
+                font-size: 2.2rem;
+            }
+            
+            .experience-title {
+                font-size: 1.7rem;
+            }
+            
+            .experience-description li {
+                font-size: 1.1rem;
+                padding-left: 1.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            html {
+                font-size: 48%;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            nav a {
+                font-size: 1.1rem;
+                margin: 0.1rem 0.3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-item {
+                padding-left: 5.5rem;
+                padding-right: 1rem;
+            }
+            
+            .experience-content {
+                padding: 1.5rem;
+            }
+            
+            .experience-title {
+                font-size: 1.6rem;
+            }
+            
+            .experience-description li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Adama Ballo</a>
+        <nav>
+            <a href="./index.html" class="active"> Home</a>
+            <a href="./index.html" >Services</a>
+            <a href="./Skils.html" >Skills</a>
+            <a href="./education.html" >Education</a>
+            <a href="./Exp%C3%A9rience.html" >Experience</a>
+            <a href="./contact.html" >Contact</a>
+        </nav>
+    </header>
+
+    <section class="experience-section">
+        <div class="container">
+            <h1 class="section-title">My <span>Experiences</span></h1>
+            <p class="section-subtitle">Professional career path and training courses in the field of cybersecurity</p>
+
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item left">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <i class="fas fa-shield-alt experience-icon"></i>
+                            <div>
+                                <h2 class="experience-title">Internship in network administration and security</h2>
+                                <div class="experience-company">TECHNICOM SARL</div>
+                                <div class="experience-date">July - September 2024</div>
+                                <div class="location">Bamako, Mali</div>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Support and maintenance of network systems directly on customer sites</li>
+                                <li>Deployment of <strong>FortiNAC</strong> to ensure network security and control user access to the network</li>
+                                <li>Installation and control of <strong>fiber optic cables</strong> in Orange Mali data centers</li>
+                                <li>Replacing existing Forti firewalls with next-generation firewalls <strong>FortiGate 100F</strong>, providing advanced protection against external threats</li>
+                                <li>Deploying the Next-Generation Web Application Firewall (WAF) <strong>FortiWeb 400D</strong> from Fortinet, designed to secure web applications and APIs</li>
+                                <li>Project: CCNA level case study on PNETLAB (static and dynamic routing ospf, ACL, VLAN, addressing...)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item right">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <i class="fas fa-water experience-icon"></i>
+                            <div>
+                                <h2 class="experience-title">Internship (helpdesk) in the IT department of the Malian Drinking Water Management Company (Somagep)</h2>
+                                <div class="experience-company">SOMAGEP SA</div>
+                                <div class="experience-date">July - September 2023</div>
+                                <div class="location">Bamako, Mali</div>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Exploration and mastery of <strong>pfSense</strong>, an open-source firewall and router solution, required for the ability to enhance security and ensure optimal connectivity management in network environments</li>
+                                <li>Management and administration of the IT park with the system <strong>GLPI</strong>, ensuring precise monitoring of equipment and optimal organization of IT resources</li>
+                                <li>Technical maintenance of IT equipment (office equipment, laptops, printers), ensuring their proper functioning and performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item left">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <i class="fas fa-laptop-code experience-icon"></i>
+                            <div>
+                                <h2 class="experience-title">introductory internship in a company</h2>
+                                <div class="experience-company">KEYSTONE GROUPE TUNIS</div>
+                                <div class="experience-date">January - February 2020</div>
+                                <div class="location">Tunis, Tunisie</div>
+                            </div>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Implementation of <strong>SIEMonster</strong>, a security information and event management (SIEM) solution that is both open-source and available in commercial version</li>
+                                <li>Designed to ensure advanced security monitoring and rapid and effective responses to threats in real time</li>
+                                <li>Introduction to the fundamental concepts of cybersecurity and network monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animation d'apparition des éléments timeline
+        window.addEventListener('load', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const animateTimeline = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            const observer = new IntersectionObserver(animateTimeline, {
+                threshold: 0.1
+            });
+            
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

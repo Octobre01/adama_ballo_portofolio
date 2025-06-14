@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form - Adama Ballo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="contact.css">
+  </head>
+  <body>
+    <header>
+        <a href="#" class="logo">Adama Ballo</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="nav">
+            <div class="close-menu" onclick="toggleMenu()">
+                <i class="fas fa-times"></i>
+            </div>
+            <a href="./index.html" class="active">Home</a>
+            <a href="./index.html">Services</a>
+            <a href="./Skils.html">Skills</a>
+            <a href="./education.html">Education</a>
+            <a href="./Expérience.html">Experience</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            Please feel free to contact me for any professional opportunities or collaborations. I am passionate about cybersecurity and always ready to take on new challenges.
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img src="location.png" class="icon" alt="Location" />
+              <p>Rabat-Maroc</p>
+            </div>
+            <div class="information">
+              <img src="email.png" class="icon" alt="Email" />
+              <p>adama.zie.ballo@gmail.com</p>
+            </div>
+            <div class="information">
+              <img src="phone.png" class="icon" alt="Phone" />
+              <p>+212 675 63 0005</p>
+            </div>
+          </div>
+
+          <div class="social-icons">
+                <a href="https://www.linkedin.com/in/adama-ballo-094a772a6" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:adama.zie.ballo@gmail.com"><i class="fa-brands fa-google"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+          <form autocomplete="off">
+            <h3 class="title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="name" class="input" required />
+              <label>Username</label>
+              <span>Username</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="email" class="input" required />
+              <label>Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="phone" class="input" />
+              <label>Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" class="input" required></textarea>
+              <label>Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="contact.js"></script>
+  </body>
+</html>
